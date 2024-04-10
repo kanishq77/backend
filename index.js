@@ -13,9 +13,18 @@ const corsOptions = {
 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
+const allowedOrigins = [
+	"https://inotes-4u3sivyvm-kanishqs-projects-a95cb428.vercel.app",
+];
 app.use(
 	cors({
-		origin: "https://inotes-amber.vercel.app",
+		origin: function (origin, callback) {
+			if (!origin || allowedOrigins.includes(origin)) {
+				callback(null, true);
+			} else {
+				callback(new Error("Not allowed by CORS"));
+			}
+		},
 	})
 );
 app.use("/api/auth", require("./routes/auth"));
