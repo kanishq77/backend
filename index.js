@@ -17,7 +17,7 @@ const allowedOrigins = [
 	"https://inotes-4u3sivyvm-kanishqs-projects-a95cb428.vercel.app",
 ];
 app.use(
-	cors({
+	cors(corsOptions, {
 		origin: function (origin, callback) {
 			if (!origin || allowedOrigins.includes(origin)) {
 				callback(null, true);
