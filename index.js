@@ -13,9 +13,7 @@ const corsOptions = {
 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-const allowedOrigins = [
-	"https://inotes-pj9cepjor-kanishqs-projects-a95cb428.vercel.app",
-];
+const allowedOrigins = ["https://inotes-amber.vercel.app"];
 app.use(
 	cors(corsOptions, {
 		origin: function (origin, callback) {
