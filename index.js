@@ -14,7 +14,7 @@ const corsOptions = {
 };
 
 const allowedOrigins = [
-	"https://inotes-4u3sivyvm-kanishqs-projects-a95cb428.vercel.app",
+	"https://inotes-pj9cepjor-kanishqs-projects-a95cb428.vercel.app",
 ];
 app.use(
 	cors(corsOptions, {
