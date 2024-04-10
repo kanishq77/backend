@@ -13,7 +13,11 @@ const corsOptions = {
 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-app.use(cors(corsOptions));
+app.use(
+	cors({
+		origin: "https://inotes-amber.vercel.app",
+	})
+);
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
 
